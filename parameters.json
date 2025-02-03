@@ -1,0 +1,5 @@
+{
+    "Train_Labels": "C:\\Users\\vivek\\Documents\\Project\\object_detection\\assignment_data_bdd\\bdd100k_labels_release\\bdd100k\\labels\\bdd100k_labels_images_train.json",  
+    "Train_Images": "C:\\Users\\vivek\\Documents\\Project\\object_detection\\assignment_data_bdd\\bdd100k_images_100k\\bdd100k\\images\\100k\\train",
+    "working_dir":  ""        
+} 
