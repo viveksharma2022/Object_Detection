@@ -40,10 +40,13 @@ class yolo_data_loader(data_loader):
                 if label["category"] in class_names:
                     yolo_labels.append({"name": entry["name"],
                                         "class_id": class_names[label["category"]],
+                                        "class_names": label["category"],
                                         "x1": label['box2d']['x1'],
                                         "y1": label['box2d']['y1'],
                                         "x2": label['box2d']['x2'],
-                                        "y2": label['box2d']['y2']})
+                                        "y2": label['box2d']['y2'],
+                                        "area": (label['box2d']['x2'] - label['box2d']['x1']) * (label['box2d']['y2'] - label['box2d']['y1']),
+                                        "aspect_ratio": (label['box2d']['x2'] - label['box2d']['x1']) / (label['box2d']['y2'] - label['box2d']['y1'])})
                 
         self.data = pd.DataFrame(yolo_labels)
             
