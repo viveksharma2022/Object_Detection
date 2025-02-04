@@ -3,14 +3,14 @@ from abc import ABC, abstractmethod
 import pandas as pd
 
 class_names = {
-        'pedestrian': 0,
+        'person': 0,
         'rider': 1,
         'car': 2,
         'truck': 3,
         'bus': 4,
         'train': 5,
-        'motorcycle': 6,
-        'bicycle': 7,
+        'motor': 6,
+        'bike': 7,
         'traffic light': 8,
         'traffic sign':9
 }
@@ -50,3 +50,15 @@ class yolo_data_loader(data_loader):
                 
         self.data = pd.DataFrame(yolo_labels)
             
+
+def export_pdSeries_to_txt(series_list, exporPath):
+    """
+    helper function to export list of pandas series data to a txt file
+
+    Args:
+        series_list (_type_): list containing pandas series elements
+        exporPath (_type_): string containg the txt path, assuming the parent directory is available
+    """
+    with open(exporPath, 'w') as f:
+        for series in series_list:
+            f.write(series.to_string() + '\n\n')

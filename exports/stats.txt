@@ -1,0 +1,24 @@
+car              713211
+traffic sign     239686
+traffic light    186117
+person            91349
+truck             29971
+bus               11672
+bike               7210
+rider              4517
+motor              3002
+train               136
+
+                       area  aspect_ratio
+class_names                              
+bike            5925.375478      0.959817
+bus            35806.863791      1.426149
+car             9422.474887      1.347727
+motor           7584.087414      1.022722
+person          2945.011939      0.460483
+rider           6314.221791      0.581744
+traffic light    507.373837      0.714379
+traffic sign    1198.935083      1.505548
+train          38624.719016      3.732762
+truck          27771.028964      1.299723
+
