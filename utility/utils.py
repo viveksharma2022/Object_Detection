@@ -64,10 +64,10 @@ class yolo_data_loader(data_loader):
                     center_x = row.x1 + width/2
                     center_y = row.y1 + height/2
                     f.write(' '.join(map(str, [class_id, 
-                                               round(width/image_width,4), 
-                                               round(height/image_height,4), 
                                                round(center_x/image_width,4), 
-                                               round(center_y/image_height,4)])))
+                                               round(center_y/image_height,4),
+                                               round(width/image_width,4), 
+                                               round(height/image_height,4)])))
                     f.write('\n')
 
             
