@@ -1,6 +1,7 @@
 import json
 from abc import ABC, abstractmethod
 import pandas as pd
+from pathlib import Path
 
 class_names = {
         'person': 0,
@@ -49,6 +50,26 @@ class yolo_data_loader(data_loader):
                                         "aspect_ratio": (label['box2d']['x2'] - label['box2d']['x1']) / (label['box2d']['y2'] - label['box2d']['y1'])})
                 
         self.data = pd.DataFrame(yolo_labels)
+
+    def export_labels(self, image_width, image_height, exportPath):
+        images = self.data.groupby(["name"])
+        for idx, (image, group) in enumerate(images):
+            print(f"{idx}/{len(images)} Exporting label for image: {image}")
+            export_label_file = exportPath.joinpath(Path(image).stem + ".txt") # remove jpg extension and add txt
+            with open(str(export_label_file), 'w') as f:
+                for row in group.itertuples():
+                    class_id = row.class_id
+                    width = row.x2 - row.x1
+                    height = row.y2 - row.y1 
+                    center_x = row.x1 + width/2
+                    center_y = row.y1 + height/2
+                    f.write(' '.join(map(str, [class_id, 
+                                               round(width/image_width,4), 
+                                               round(height/image_height,4), 
+                                               round(center_x/image_width,4), 
+                                               round(center_y/image_height,4)])))
+                    f.write('\n')
+
             
 
 def export_pdSeries_to_txt(series_list, exporPath):
