@@ -9,9 +9,8 @@ if __name__ == "__main__":
     params = read_parameter_file()
 
     # create folders to export 
-    params["labels_output"] = Path(params["Train_Labels"]).parent
-    params["train_labels_yolo"]  = params["labels_output"].joinpath("train")
-    params["val_labels_yolo"]    = params["labels_output"].joinpath("val")
+    params["train_labels_yolo"]  = Path(params["Train_Images"]).parent.joinpath("labels")
+    params["val_labels_yolo"]    = Path(params["Val_Images"]).parent.joinpath("labels")
 
     params["train_labels_yolo"].mkdir(parents = True, exist_ok = True)
     params["val_labels_yolo"].mkdir(parents = True, exist_ok = True)
@@ -25,6 +24,8 @@ if __name__ == "__main__":
     val_raw_labels = data_loader_train.parse_json_file(params["Val_Labels"])
     data_loader_val.format_labels(val_raw_labels)
     data_loader_val.export_labels(params["image_width"], params["image_height"], params["val_labels_yolo"])
+
+
 
     pause = 1
 

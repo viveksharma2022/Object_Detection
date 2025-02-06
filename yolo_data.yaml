@@ -1,0 +1,18 @@
+# YOLOv5 Dataset Configuration
+train: C:/Users/vivek/Documents/Project/object_detection/assignment_data_bdd/bdd100k_images_100k/bdd100k/images/100k/train/images  # Path to custom training images
+val: C:/Users/vivek/Documents/Project/object_detection/assignment_data_bdd/bdd100k_images_100k/bdd100k/images/100k/val/images    # Path to custom validation images
+
+# Number of classes (e.g., 3 for custom dataset with 'person', 'car', 'dog')
+nc: 10  # Number of classes
+
+# Class names corresponding to the custom dataset
+names: ['person',
+        'rider',
+        'car',
+        'truck',
+        'bus',
+        'train',
+        'motor',
+        'bike',
+        'traffic light',
+        'traffic sign']

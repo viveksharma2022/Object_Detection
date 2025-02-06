@@ -52,7 +52,7 @@ class yolo_data_loader(data_loader):
         self.data = pd.DataFrame(yolo_labels)
 
     def export_labels(self, image_width, image_height, exportPath):
-        images = self.data.groupby(["name"])
+        images = self.data.groupby("name")
         for idx, (image, group) in enumerate(images):
             print(f"{idx}/{len(images)} Exporting label for image: {image}")
             export_label_file = exportPath.joinpath(Path(image).stem + ".txt") # remove jpg extension and add txt
