@@ -68,7 +68,7 @@ if __name__ == "__main__":
     expPath.mkdir(parents=True, exist_ok= True)
 
     # Convert the image (OpenCV Mat) to a byte array
-    for imgFile in Path(params["Val_Images"]).glob('*.jpg'):
+    for imgFile in Path(params["infer_Images"]).glob('*.jpg'):
         logger.info(f"Inferencing: {imgFile}")
         # Load an image with OpenCV
         image = cv2.imread(imgFile)

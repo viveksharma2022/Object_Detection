@@ -12,7 +12,7 @@ if __name__ == "__main__":
     expPath = Path.cwd().joinpath("Inference_results//" + datetime.now().strftime("%Y%m%d_%H%M%S"))
     expPath.mkdir(parents=True, exist_ok= True)
     
-    for imgFile in Path(params["Val_Images"]).glob('*.jpg'):
+    for imgFile in Path(params["infer_Images"]).glob('*.jpg'):
         img = cv2.imread(imgFile)
         try:
             img = cv2.cvtColor(img)
