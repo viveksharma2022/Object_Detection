@@ -1,3 +1,4 @@
+class_names
 car              713211
 traffic sign     239686
 traffic light    186117
