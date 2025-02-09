@@ -34,7 +34,7 @@ class data_loader(ABC):
         pass
 
 class yolo_data_loader(data_loader):
-    """_summary_
+    """
     Specific implementation for data loading for the yolo model
 
     """
@@ -43,7 +43,8 @@ class yolo_data_loader(data_loader):
         self.data_labels = None
 
     def format_labels(self,input_labels):
-        """_summary_
+        """
+        Format the labels so as to extract relevant information for EDA and label export for ultralytics yolo
 
         Args:
             input_labels (list): resulting list from json parser
@@ -107,7 +108,7 @@ def export_pdSeries_to_txt(series_list, exporPath):
 
 
 class Logger:
-    def __init__(self, name="my_app"):
+    def __init__(self, name="object_detection"):
         # Create a logger
         self.logger = logging.getLogger(name)
         self.logger.setLevel(logging.INFO)  # Default level can be changed

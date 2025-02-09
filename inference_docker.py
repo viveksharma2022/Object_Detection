@@ -8,7 +8,13 @@ from datetime import datetime
 from utility.utils import Logger
 
 def save_response_graphic(result: json, image: cv2.Mat, expPath: Path):
+    """Draws the prediction boxes from the json output of model api and exports the file
 
+    Args:
+        result (json): result of the fast api inference response from the docker container
+        image (cv2.Mat): inference image
+        expPath (Path): path to save the image
+    """
     class_names_colors = {
         'person': (185, 72, 94),
         'rider': (45, 218, 156),
