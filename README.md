@@ -1,6 +1,6 @@
 # Object_Detection
 
-![Detection result](exports\figures\val_batch1_labels.jpg)
+![Detection result](./exports/figures/val_batch1_labels.jpg)
 
 The project consists of python scripts to train a yolo object detection model from the  [BDD100K dataset](https://bair.berkeley.edu/blog/2018/05/30/bdd/).
 The python packages are listed in the requirements.txt file. Install the packages in a dedicated virtual environment.
